@@ -1,0 +1,32 @@
+services:
+  web:
+    build: .
+    container_name: auth_system
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=admin
+      - DB_NAME=postgres
+      - ACCESS_TOKEN_EXPIRE_MINUTES=5
+      - REFRESH_TOKEN_EXPIRE_DAYS=5
+    ports:
+      - "8080:8000"
+    depends_on:
+      - db
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+  db:
+    image: postgres:15
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:
