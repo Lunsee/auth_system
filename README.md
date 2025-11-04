@@ -22,11 +22,12 @@ RefreshToken - refresh токены для обновления сессий
 ## API Endpoints
 ### 🔐 Аутентификация
 | Метод | 	Endpoint | Описание | Права |
-|-------------|-------------|-------------|
+|-------------|-------------|-------------|-------------|
 | POST    | /auth/register | Регистрация | Public |
 | POST    | /auth/token | Авторизация | Public |
 | POST    | /auth/refresh | Обновление токена | Public |
 | POST    | /auth/logout | Выход | Public |
+
 
 ### 👤 Пользователи
 Метод	Endpoint	Описание	Права
