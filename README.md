@@ -18,12 +18,12 @@
 
 ## API Endpoints
 ### 🔐 Аутентификация
-| Метод | 	Endpoint | Описание | 
-|-------------|-------------|-------------|
-| POST    | /auth/register | Регистрация |
-| POST    | /auth/token | Авторизация | 
-| POST    | /auth/refresh | Обновление токена | 
-| POST    | /auth/logout | Выход | 
+| Метод | Endpoint | Описание | Права |
+|-------|----------|----------|-------|
+| POST | `/auth/register` | Регистрация нового пользователя | Public |
+| POST | `/auth/token` | Авторизация, получение JWT токенов | Public |
+| POST | `/auth/refresh` | Обновление access token | Public |
+| POST | `/auth/logout` | Выход из системы, удаление refresh token | Public |
 
 
 ### 👤 Пользователи
